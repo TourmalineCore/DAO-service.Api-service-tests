@@ -1,0 +1,669 @@
+{
+	"info": {
+		"_postman_id": "013b34d8-0c19-4a21-b6ba-7326bfd636a3",
+		"name": "Nindao-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18439924"
+	},
+	"item": [
+		{
+			"name": "Local",
+			"item": [
+				{
+					"name": "Create group",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": -689396867,\r\n    \"title\": \"officetest\",\r\n    \"owner\": {\r\n        \"id\": 433249804,\r\n        \"firstName\": \"Ilya\",\r\n        \"lastName\": \"Sapronov\",\r\n        \"username\": \"@Iliandrik\"\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/groups/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"groups",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user groups",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "telegramData",
+								"value": "{{TELEGRAM_DATA}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/groups",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get group by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "telegramData",
+								"value": "{{TELEGRAM_DATA}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/groups/:groupId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"groups",
+								":groupId"
+							],
+							"variable": [
+								{
+									"key": "groupId",
+									"value": "-689396844"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get wallet connect session",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "telegramData",
+								"value": "{{TELEGRAM_DATA}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/walletConnectSessions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"walletConnectSessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create wallet connect session",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "telegramData",
+								"value": "{{TELEGRAM_DATA}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"connected\":true,\"accounts\":[\"0x2d0805db0736690c3f86a8cc40470abed54afc3e\"],\"chainId\":4,\"bridge\":\"https://0.bridge.walletconnect.org\",\"key\":\"1644ff149c31f4b4e037ff3a549acd9e2f2bee65af25212a300f9e2248318534\",\"clientId\":\"35161509-635e-4376-97d9-ff65c171e172\",\"clientMeta\":{\"description\":\"ninDAO telegram bot\",\"url\":\"https://nindao.xyz\",\"icons\":[\"https://walletconnect.org/walletconnect-logo.png\"],\"name\":\"ninDAO\"},\"peerId\":\"df5a5a9c-ef08-4809-b090-b11aa131d095\",\"peerMeta\":{\"description\":\"MetaMask Mobile app\",\"url\":\"https://metamask.io\",\"icons\":[\"https://raw.githubusercontent.com/MetaMask/brand-resources/master/SVG/metamask-fox.svg\"],\"name\":\"MetaMask\",\"ssl\":true},\"handshakeId\":1658997481275837,\"handshakeTopic\":\"1f86bbd6-02a4-43c6-b177-584eb0029e39\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/walletConnectSessions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"walletConnectSessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Init DAO",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "telegramData",
+								"value": "{{TELEGRAM_DATA}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groupId\": -664256840,\r\n    \"owners\": [\"0xC5c2a86392Daedb4f21307f27a66d4d04ff6D9E6\"],\r\n    \"threshold\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/groups/initDao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"groups",
+								"initDao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get proposals",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "telegramData",
+								"value": "{{TELEGRAM_DATA}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/proposals/?pageNumber=1&groupId=-689396844",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"proposals",
+								""
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "groupId",
+									"value": "-689396844"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get proposal by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "telegramData",
+								"value": "{{TELEGRAM_DATA}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/proposals/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"proposals",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create proposal for adding a participant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "telegramData",
+								"value": "{{TELEGRAM_DATA}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"add participant\",\r\n    \"groupId\": -774315752,\r\n    \"address\": \"0xBcd4042DE499D14e55001CcbB24a551F3b954096\",\r\n    \"threshold\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/proposals/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"proposals",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create proposal for removing a participant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "telegramData",
+								"value": "{{TELEGRAM_DATA}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"remove participant\",\r\n    \"groupId\": -689396844,\r\n    \"address\": \"0xC5c2a86392Daedb4f21307f27a66d4d04ff6D9E6\",\r\n    \"threshold\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/proposals/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"proposals",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create proposal for transfering ethers",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "telegramData",
+								"value": "{{TELEGRAM_DATA}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"transfer ethers\",\r\n    \"groupId\": -689396844,\r\n    \"transferTo\": \"0x497F3cC562D500371dc093B5086c73Fa7ae57C9c\",\r\n    \"amountOfFunds\": \"0.0003\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/proposals/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"proposals",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create proposal for transfering erc20 tokens",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "telegramData",
+								"value": "{{TELEGRAM_DATA}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"contract interaction\",\r\n    \"groupId\": -689396844,\r\n    \"transferTo\": \"0x92cb832286F704526a2B9A988418086F890e91A8\",\r\n    \"amountOfFunds\": \"0.0025\",\r\n    \"tokenSymbol\": \"BAT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/proposals/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"proposals",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "telegramData",
+								"value": "{{TELEGRAM_DATA}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/users/find?address=0x497F3cC562D500371dc093B5086c73Fa7ae57C9c&username=julia",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"find"
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "0x497F3cC562D500371dc093B5086c73Fa7ae57C9c"
+								},
+								{
+									"key": "username",
+									"value": "julia"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vote for proposal",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "telegramData",
+								"value": "{{TELEGRAM_DATA}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/proposals/vote?proposalId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"proposals",
+								"vote"
+							],
+							"query": [
+								{
+									"key": "proposalId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get dao balance",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "telegramData",
+								"value": "{{TELEGRAM_DATA}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/dao/getBalance/?groupId=-689396847",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"dao",
+								"getBalance",
+								""
+							],
+							"query": [
+								{
+									"key": "groupId",
+									"value": "-689396847"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check that balance is zero",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "telegramData",
+								"value": "{{TELEGRAM_DATA}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/dao/checkDaoBalance/:groupId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"dao",
+								"checkDaoBalance",
+								":groupId"
+							],
+							"variable": [
+								{
+									"key": "groupId",
+									"value": "-519589382"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Execute proposal id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "telegramData",
+								"value": "{{TELEGRAM_DATA}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/proposals/execute?proposalId=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"proposals",
+								"execute"
+							],
+							"query": [
+								{
+									"key": "proposalId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1056327991,\r\n    \"groupId\": -634860525\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/registration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get registered users in a group",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "telegramData",
+								"value": "{{TELEGRAM_DATA}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/registration?groupId=-774315752",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"registration"
+							],
+							"query": [
+								{
+									"key": "groupId",
+									"value": "-774315752"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update group state",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "telegramData",
+								"value": "{{TELEGRAM_DATA}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"state\": \"DAO initialization\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/groups/-712755256",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"groups",
+								"-712755256"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

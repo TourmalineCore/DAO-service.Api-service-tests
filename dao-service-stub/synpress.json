@@ -1,0 +1,23 @@
+{
+  "baseUrl": "https://metamask.github.io/",
+  "userAgent": "synpress",
+  "retries": { "runMode": 0, "openMode": 0 },
+  "integrationFolder": "./tests/integration/specs",
+  "screenshotsFolder": "screenshots",
+  "videosFolder": "videos",
+  "video": false,
+  "chromeWebSecurity": true,
+  "viewportWidth": 1366,
+  "viewportHeight": 850,
+  "component": {
+    "componentFolder": ".",
+    "testFiles": "**/*spec.{js,jsx,ts,tsx}"
+  },
+  "env": {
+    "coverage": false
+  },
+  "defaultCommandTimeout": 15000,
+  "pageLoadTimeout": 15000,
+  "requestTimeout": 15000,
+  "supportFile": "./tests/support/index.js"
+}
