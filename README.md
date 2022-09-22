@@ -8,19 +8,33 @@
 
 ## Install dependencies
 
-First thing you have to do is install dependencies
+First thing you have to do is install dependencies:
 
 ```
-npm ci
+npm i
 ```
 ## Preparing for testing
+
+First, you need move to **dao-service-stub** directory:
+
+```
+cd dao-service-stub
+```
+
+And then install all dependencies by `npm i` command
+
+Afterall launch server - it is necessary for workability of the tests: 
+
+```
+npm start
+```
 
 - ### Api tests
 
   1. You need to changes some constants on your own data in the file **test/constants/index.js**.
   Don't forget to get the Telegram data
 
-  2. Have wallet connect session in Reddis database.
+  2. Have WalletConnect session in Reddis database.
 
   3. Api bot is started.
 
@@ -32,12 +46,10 @@ npm ci
 
 ## Run tests
 
-- For run api-tests, just write this command in `cli`:
+- For run api-tests, write command:
 ```
 npm run test
 ```
-
-During the test you have to just accepting all signatures is sended
 
 - For run cypress e2e-tests:
 ```
