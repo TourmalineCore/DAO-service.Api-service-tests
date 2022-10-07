@@ -24,12 +24,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/groups/create",
+							"raw": "http://localhost:5050/groups/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"groups",
 								"create"
@@ -50,12 +50,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:5000/groups",
+							"raw": "http://localhost:5050/groups",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"groups"
 							]
@@ -75,12 +75,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:5000/groups/:groupId",
+							"raw": "http://localhost:5050/groups/:groupId",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"groups",
 								":groupId"
@@ -107,12 +107,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:5000/walletConnectSessions",
+							"raw": "http://localhost:5050/walletConnectSessions",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"walletConnectSessions"
 							]
@@ -141,12 +141,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/walletConnectSessions",
+							"raw": "http://localhost:5050/walletConnectSessions",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"walletConnectSessions"
 							]
@@ -175,12 +175,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/groups/initDao",
+							"raw": "http://localhost:5050/groups/initDao",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"groups",
 								"initDao"
@@ -201,12 +201,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:5000/proposals/?pageNumber=1&groupId=-689396844",
+							"raw": "http://localhost:5050/proposals/?pageNumber=1&groupId=-689396844",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"proposals",
 								""
@@ -237,12 +237,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:5000/proposals/1",
+							"raw": "http://localhost:5050/proposals/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"proposals",
 								"1"
@@ -272,12 +272,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/proposals/create",
+							"raw": "http://localhost:5050/proposals/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"proposals",
 								"create"
@@ -307,12 +307,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/proposals/create",
+							"raw": "http://localhost:5050/proposals/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"proposals",
 								"create"
@@ -342,12 +342,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/proposals/create",
+							"raw": "http://localhost:5050/proposals/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"proposals",
 								"create"
@@ -377,12 +377,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/proposals/create",
+							"raw": "http://localhost:5050/proposals/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"proposals",
 								"create"
@@ -403,12 +403,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:5000/users/find?address=0x497F3cC562D500371dc093B5086c73Fa7ae57C9c&username=julia",
+							"raw": "http://localhost:5050/users/find?address=0x497F3cC562D500371dc093B5086c73Fa7ae57C9c&username=julia",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"users",
 								"find"
@@ -439,12 +439,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:5000/proposals/vote?proposalId=1",
+							"raw": "http://localhost:5050/proposals/vote?proposalId=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"proposals",
 								"vote"
@@ -471,12 +471,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:5000/dao/getBalance/?groupId=-689396847",
+							"raw": "http://localhost:5050/dao/getBalance/?groupId=-689396847",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"dao",
 								"getBalance",
@@ -504,12 +504,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:5000/dao/checkDaoBalance/:groupId",
+							"raw": "http://localhost:5050/dao/checkDaoBalance/:groupId",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"dao",
 								"checkDaoBalance",
@@ -537,12 +537,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:5000/proposals/execute?proposalId=3",
+							"raw": "http://localhost:5050/proposals/execute?proposalId=3",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"proposals",
 								"execute"
@@ -572,12 +572,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/registration",
+							"raw": "http://localhost:5050/registration",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"registration"
 							]
@@ -609,12 +609,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/registration?groupId=-774315752",
+							"raw": "http://localhost:5050/registration?groupId=-774315752",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"registration"
 							],
@@ -649,12 +649,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/groups/-712755256",
+							"raw": "http://localhost:5050/groups/-712755256",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5050",
 							"path": [
 								"groups",
 								"-712755256"

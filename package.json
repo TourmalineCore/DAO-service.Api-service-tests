@@ -11,18 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@nuintun/qrcode": "^3.3.0",
-    "@walletconnect/client": "^1.7.8",
     "chai": "^4.3.6",
     "cypress": "^10.3.0",
-    "dotenv": "^16.0.1",
-    "encoding": "^0.1.13",
-    "web3-eth": "^1.7.4",
-    "web3-eth-contract": "^1.7.4"
+    "dotenv": "^16.0.1"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.3.0",
-    "cy-verify-downloads": "^0.1.8",
     "mocha": "^10.0.0",
     "pactum": "^3.1.13"
   }
