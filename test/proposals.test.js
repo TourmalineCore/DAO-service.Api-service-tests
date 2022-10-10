@@ -1,11 +1,11 @@
-const { spec, request, sleep } = require('pactum');
+const { spec, request } = require('pactum');
 const { mockData, proposalData, TransactionType } = require('./constants/index');
-const { validSchemaGetProposals } = require('./schemas/getProposals')
 
 request.setDefaultTimeout(50 * 1000); // 50 sec delay while user signed transaction
 
-describe('group api controllers test', () => {
-  const{ BASE_URL } = process.env
+describe('Transactions api controllers test', () => {
+  const { BASE_URL } = process.env
+  request.setBaseUrl(BASE_URL);
 
   const DaoGroupId = mockData.groupId;
   const mockOwnerId = mockData.ownerId;
@@ -36,7 +36,7 @@ describe('group api controllers test', () => {
   }
     
     await spec()
-    .post(`${BASE_URL}/proposals/create`)
+    .post(`/proposals/create`)
     .withHeaders('telegramData', JSON.stringify(mockPersonalTelegramData))
     .withJson(requestBody)
     .expectStatus(500)
@@ -57,7 +57,7 @@ describe('group api controllers test', () => {
     console.log("APROVE TRANSACTION IN YOUR METAMASK APP IN 50 SEC")
 
     const _spec = await spec()
-      .post(`${BASE_URL}/proposals/create`)
+      .post(`/proposals/create`)
       .withHeaders('telegramData', JSON.stringify(mockPersonalTelegramData))
       .withJson(requestBody)
       .expectStatus(201)
@@ -79,14 +79,14 @@ describe('group api controllers test', () => {
     console.log("APROVE TRANSACTION IN YOUR METAMASK APP IN 50 SEC")
 
     await spec()
-      .post(`${BASE_URL}/proposals/create`)
+      .post(`/proposals/create`)
       .withHeaders('telegramData', JSON.stringify(mockPersonalTelegramData))
       .withJson(requestBody)
       .expectStatus(201)
       .retry(3);
   });
 
-  it('transfer ethers proposal', async () => {
+  it('try to transfer ethers proposal, but DAO balance is zero', async () => {
 
     const expectedErrorMessage = 'Error: The DAO group has only 0.0 ETH. The amount in the request is greater than the balance amount';
 
@@ -98,10 +98,8 @@ describe('group api controllers test', () => {
       "amountOfFunds": "0.0003"
     }
 
-    console.log("APROVE TRANSACTION IN YOUR METAMASK APP IN 50 SEC")
-
     await spec()
-      .post(`${BASE_URL}/proposals/create`)
+      .post(`/proposals/create`)
       .withHeaders('telegramData', JSON.stringify(mockPersonalTelegramData))
       .withJson(requestBody)
       .expectStatus(500)
@@ -121,10 +119,8 @@ describe('group api controllers test', () => {
 
     const expectedErrorMessage = 'Error: The DAO group has only 0.0 ETH. The amount in the request is greater than the balance amount';
 
-    console.log("APROVE TRANSACTION IN YOUR METAMASK APP IN 50 SEC")
-
     await spec()
-      .post(`${BASE_URL}/proposals/create`)
+      .post(`/proposals/create`)
       .withHeaders('telegramData', JSON.stringify(mockPersonalTelegramData))
       .withJson(requestBody)
       .expectStatus(500)
@@ -137,7 +133,7 @@ describe('group api controllers test', () => {
     // const expectedSchema = validSchemaGetProposals
     
     await spec()
-    .get(`${BASE_URL}/proposals/?pageNumber=1&groupId=${DaoGroupId}&status=voting`)
+    .get(`/proposals/?pageNumber=1&groupId=${DaoGroupId}&status=voting`)
     .withHeaders('telegramData', JSON.stringify(mockPersonalTelegramData))
     .expectStatus(200)
     // .expectJsonSchema(expectedSchema)
@@ -146,10 +142,10 @@ describe('group api controllers test', () => {
 
   it('try to get non-exist proposal by it id', async () => {
 
-    const nonExistProposal = 999999
+    const nonExistProposal = 999999;
 
     await spec()
-      .get(`${BASE_URL}/proposals/${nonExistProposal}`)
+      .get(`/proposals/${nonExistProposal}`)
       .withHeaders('telegramData', JSON.stringify(mockPersonalTelegramData))
       .expectStatus(500)
       .retry(3);
@@ -158,46 +154,47 @@ describe('group api controllers test', () => {
   it('get particular created proposal by it id', async () => {
 
     await spec()
-      .get(`${BASE_URL}/proposals/${proposalId}`)
+      .get(`/proposals/${proposalId}`)
       .withHeaders('telegramData', JSON.stringify(mockPersonalTelegramData))
       .expectStatus(200)
-      // .expectJsonLike(expectedResponse)
       .retry(3);
     });
 
-  it('Try to vote for non-exist proposal', async () => {
+  it('try to vote for non-exist proposal', async () => {
 
     const expectedResponse = {
       "statusCode": 500,
       "message": "Error: Proposal not found"
-    }
+    };
 
-    const nonExistProposal = 999999
+    const nonExistProposal = 999999;
 
     await spec()
-      .put(`${BASE_URL}/proposals/vote?proposalId=${nonExistProposal}`)
+      .put(`/proposals/vote?proposalId=${nonExistProposal}`)
       .withHeaders('telegramData', JSON.stringify(mockPersonalTelegramData))
       .expectJson(expectedResponse)
-      .expectStatus(500)
+      .expectStatus(500);
   }); 
 
-  it('Vote for proposal', async () => {
+  it('vote for proposal', async () => {
 
+    console.log('APPROVE VOTE FOR PROPOSAL TRANSACTION')
     await spec()
-      .put(`${BASE_URL}/proposals/vote?proposalId=${proposalId}`)
+      .put(`/proposals/vote?proposalId=${proposalId}`)
       .withHeaders('telegramData', JSON.stringify(mockPersonalTelegramData))
-      .expectStatus(200)
+      .expectStatus(200);
   });
   
-  it('Execute proposal id, but zero DAO balance', async () => {
+  it('execute proposal id, but zero DAO balance', async () => {
 
     const expectedErrorMessage = 'execution failed. See transaction details here:';
 
+    console.log('APPROVE PROPOSAL EXECUTING');
     await spec()
-      .put(`${BASE_URL}/proposals/execute?proposalId=${proposalId}`)
+      .put(`/proposals/execute?proposalId=${proposalId}`)
       .withHeaders('telegramData', JSON.stringify(mockPersonalTelegramData))
       .expectStatus(500)
-      .expectBodyContains(expectedErrorMessage)
+      .expectBodyContains(expectedErrorMessage);
       // .retry(3);
   })
 });
